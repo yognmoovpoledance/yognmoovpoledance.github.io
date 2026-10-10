@@ -4,202 +4,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Tarifs Pole Dance | Yog'n Moov à Soulières</title>
-
-  <meta name="description" content="Découvrez les tarifs des cours de pole dance chez Yog'n Moov à Soulières, près d'Épernay : cours collectifs, privés, duo, parent-enfant, stages et coaching à distance.">
+  <meta name="description" content="Découvrez les tarifs des cours de pole dance, cours privés, duos, parent-enfant et coachings chez Yog'n Moov à Soulières, près d'Épernay.">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    :root {
-      --fond: #171615;
-      --fond-carte: #24211e;
-      --dore: #c7a66a;
-      --creme: #f6efe4;
-      --texte: #f4eee6;
-      --texte-doux: #c9c0b5;
+    .tarifs-page {
+      --creme: #f8f3eb;
+      --framboise: #bd426c;
+      --dore: #c5a15b;
+      --noir: #171717;
+      background: var(--creme);
+      color: var(--noir);
+      padding: 35px 18px 50px;
+      min-height: 70vh;
     }
 
-    * {
+    .tarifs-page * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .tarifs-intro {
+      max-width: 900px;
+      margin: 0 auto 35px;
+      padding: 38px 28px;
+      background: var(--noir);
+      color: var(--creme);
+      border-radius: 18px;
+      text-align: center;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--fond);
-      color: var(--texte);
+    .tarifs-intro .surtitre {
+      color: var(--dore);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .tarifs-intro h1 {
+      color: var(--framboise);
+      font-size: clamp(32px, 6vw, 48px);
+      margin: 0 0 18px;
+    }
+
+    .tarifs-intro p {
+      max-width: 650px;
+      margin: 0 auto 12px;
+      line-height: 1.8;
+    }
+
+    .tarifs-section {
+      max-width: 1050px;
+      margin: 0 auto 42px;
+    }
+
+    .tarifs-section h2 {
+      text-align: center;
+      font-size: clamp(25px, 4vw, 34px);
+      margin: 0 0 10px;
+      color: var(--noir);
+    }
+
+    .tarifs-section .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 25px;
       line-height: 1.7;
     }
 
-    header {
-      text-align: center;
-      padding: 48px 20px 30px;
-      background: #201e1b;
-      border-bottom: 1px solid rgba(199, 166, 106, 0.35);
-    }
-
-    header h1 {
-      margin: 0 0 10px;
-      color: var(--dore);
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      letter-spacing: 1px;
-    }
-
-    header p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: var(--texte-doux);
-    }
-
-    main {
-      width: min(100% - 32px, 1050px);
-      margin: 0 auto;
-      padding: 35px 0 55px;
-    }
-
-    section {
-      margin-bottom: 45px;
-    }
-
-    h2 {
-      color: var(--dore);
-      font-size: 1.65rem;
-      margin: 0 0 12px;
-    }
-
-    .intro {
-      color: var(--texte-doux);
-      margin-bottom: 25px;
-    }
-
-    .tarifs-grid {
+    .tarifs-grille {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
-    .tarif-card {
-      background: var(--fond-carte);
-      border: 1px solid rgba(199, 166, 106, 0.35);
-      border-radius: 14px;
-      padding: 22px;
+    .tarif-carte {
+      background: #fffdf9;
+      border: 1px solid #e7dccc;
+      border-radius: 15px;
+      padding: 25px 22px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
     }
 
-    .tarif-card h3 {
-      color: var(--creme);
-      font-size: 1.1rem;
-      margin: 0 0 10px;
+    .tarif-carte h3 {
+      font-size: 19px;
+      margin: 0 0 12px;
+      color: var(--noir);
     }
 
-    .prix {
-      color: var(--dore);
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0 0 8px;
+    .tarif-prix {
+      color: var(--framboise);
+      font-size: 32px;
+      font-weight: 700;
+      margin: 12px 0;
     }
 
-    .tarif-card p {
-      color: var(--texte-doux);
-      margin: 0;
+    .tarif-carte p {
+      line-height: 1.7;
+      margin-bottom: 0;
     }
 
-    .planning {
-      background: var(--fond-carte);
-      border: 1px solid rgba(199, 166, 106, 0.4);
-      border-radius: 16px;
-      padding: 28px;
+    .tarif-carte .detail {
+      color: #6e625b;
+      font-size: 14px;
     }
 
-    .planning p {
-      color: var(--texte-doux);
-      margin: 0 0 14px;
+    .tarif-mis-en-avant {
+      border: 2px solid var(--dore);
     }
 
-    .planning strong {
-      color: var(--creme);
+    .prestations-autres {
+      background: #eee4d7;
+      border-radius: 18px;
+      padding: 30px 24px;
     }
 
-    .planning-buttons {
+    .prestations-autres h2 {
+      margin-bottom: 12px;
+    }
+
+    .prestations-liste {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 22px;
     }
 
-    .btn {
-      display: inline-block;
+    .prestation-pastille {
+      background: #fffdf9;
+      border: 1px solid #d8c6a5;
+      border-radius: 30px;
+      padding: 12px 17px;
       text-align: center;
-      text-decoration: none;
+    }
+
+    .tarifs-note {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 25px;
+      border-left: 4px solid var(--framboise);
+      background: #fffdf9;
+      border-radius: 8px;
+      line-height: 1.8;
+    }
+
+    .tarifs-contact {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 20px;
+      background: var(--noir);
+      color: var(--creme);
+      border-radius: 18px;
+    }
+
+    .tarifs-contact h2 {
+      color: var(--dore);
+      margin-top: 0;
+    }
+
+    .tarifs-contact p {
+      line-height: 1.8;
+    }
+
+    .tarifs-bouton {
+      display: inline-block;
+      margin: 8px 5px;
       padding: 12px 20px;
       border-radius: 30px;
-      font-weight: bold;
-      transition: 0.2s ease;
+      background: var(--framboise);
+      color: white !important;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    .btn-principal {
-      background: var(--dore);
-      color: #201b14;
-    }
-
-    .btn-secondaire {
+    .tarifs-bouton.secondaire {
       background: transparent;
       border: 1px solid var(--dore);
-      color: var(--creme);
+      color: var(--creme) !important;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .note {
-      color: var(--texte-doux);
-      font-size: 0.9rem;
-      margin-top: 20px;
-    }
-
-    footer {
+    .tarifs-footer {
       text-align: center;
-      padding: 28px 18px;
-      background: #100f0e;
-      border-top: 1px solid rgba(199, 166, 106, 0.3);
-      color: var(--texte-doux);
-      font-size: 0.9rem;
+      padding: 25px 15px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #655b53;
     }
 
-    footer p {
-      margin: 6px 0;
-    }
-
-    footer a {
-      color: var(--dore);
-      text-decoration: none;
+    .tarifs-footer a {
+      color: var(--framboise);
     }
 
     @media (max-width: 600px) {
-      header {
-        padding: 35px 18px 25px;
+      .tarifs-page {
+        padding: 22px 12px 35px;
       }
 
-      main {
-        width: min(100% - 24px, 1050px);
-        padding-top: 25px;
+      .tarifs-intro {
+        padding: 28px 18px;
       }
 
-      .planning {
-        padding: 21px;
-      }
-
-      .planning-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
+      .tarif-carte {
+        padding: 22px 17px;
       }
     }
   </style>
@@ -207,149 +217,148 @@
 
 <body>
 
+  <!-- En-tête du site : reprend celui défini dans style.css -->
   <header>
-    <h1>Tarifs Pole Dance</h1>
-    <p>
-      <strong>Yog'n Moov</strong> — des cours à taille humaine,
-      dans une ambiance conviviale et bienveillante à Soulières,
-      à environ 15 minutes d'Épernay.
-    </p>
+    <div class="logo">
+      <a href="index.html">Yog'n Moov</a>
+      <span>POLE DANCE</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cours.html">Les cours</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="tarifs.html" class="active">Tarifs</a>
+    </nav>
   </header>
 
-  <main>
+  <main class="tarifs-page">
 
-    <section id="tarifs">
-      <h2>Les tarifs</h2>
-      <p class="intro">
-        Des formules adaptées à vos envies, que vous souhaitiez
-        découvrir la pole dance, progresser à votre rythme ou partager
-        un moment à plusieurs.
+    <section class="tarifs-intro">
+      <div class="surtitre">Yog'n Moov · Soulières</div>
+      <h1>Les tarifs</h1>
+      <p>
+        La pole dance, à ton rythme, dans une ambiance conviviale et bienveillante.
+      </p>
+      <p>
+        Ici, pas de compétition ni de pression : chacun avance à son rythme,
+        dans un petit groupe où l'on prend le temps d'apprendre et de se faire plaisir.
+      </p>
+    </section>
+
+    <section class="tarifs-section">
+      <h2>Les cours au studio</h2>
+      <p class="section-intro">
+        Des cours en petit comité, avec un maximum de 4 à 5 personnes,
+        pour un accompagnement attentif et personnalisé.
       </p>
 
-      <div class="tarifs-grid">
+      <div class="tarifs-grille">
 
-        <article class="tarif-card">
+        <article class="tarif-carte">
           <h3>Cours collectif</h3>
-          <p class="prix">22 €</p>
-          <p>Par séance, en petit groupe de 4 à 5 personnes maximum.</p>
+          <div class="tarif-prix">22 €</div>
+          <p>La séance</p>
+          <p class="detail">Petit groupe de 4 à 5 personnes</p>
         </article>
 
-        <article class="tarif-card">
-          <h3>Carte de 10 cours</h3>
-          <p class="prix">200 €</p>
-          <p>Soit un cours offert.</p>
+        <article class="tarif-carte tarif-mis-en-avant">
+          <h3>Carte 10 cours</h3>
+          <div class="tarif-prix">200 €</div>
+          <p>Pour pratiquer régulièrement</p>
+          <p class="detail">Soit un cours offert</p>
         </article>
 
-        <article class="tarif-card">
+        <article class="tarif-carte">
           <h3>Cours privé</h3>
-          <p class="prix">70 €</p>
-          <p>Une séance individuelle, adaptée à vos envies et à votre rythme.</p>
+          <div class="tarif-prix">70 €</div>
+          <p>Un accompagnement individuel</p>
+          <p class="detail">Pour progresser selon tes envies</p>
         </article>
 
-        <article class="tarif-card">
-          <h3>Cours en duo</h3>
-          <p class="prix">40 € / personne</p>
-          <p>Pour partager la séance avec une personne de votre choix.</p>
+        <article class="tarif-carte">
+          <h3>Cours duo</h3>
+          <div class="tarif-prix">40 €</div>
+          <p>Par personne</p>
+          <p class="detail">À partager à deux</p>
         </article>
 
-        <article class="tarif-card">
-          <h3>Parent / enfant</h3>
-          <p class="prix">60 € le duo</p>
-          <p>Un atelier d'une heure pour partager une activité ensemble.</p>
+        <article class="tarif-carte">
+          <h3>Atelier parent-enfant</h3>
+          <div class="tarif-prix">60 €</div>
+          <p>Pour le duo</p>
+          <p class="detail">Séance d'une heure · sur disponibilité</p>
         </article>
 
-        <article class="tarif-card">
-          <h3>Stages</h3>
-          <p class="prix">Sur demande</p>
-          <p>Contactez-moi pour connaître les tarifs et les possibilités.</p>
-        </article>
-
-        <article class="tarif-card">
-          <h3>Cours à domicile</h3>
-          <p class="prix">Sur demande</p>
-          <p>Contactez-moi pour étudier votre projet et connaître le tarif.</p>
-        </article>
-
-        <article class="tarif-card">
-          <h3>Cours sur podium</h3>
-          <p class="prix">Sur demande</p>
-          <p>Pour vos événements et prestations : contactez-moi pour un devis.</p>
-        </article>
-
-        <article class="tarif-card">
-          <h3>Cours en extérieur</h3>
-          <p class="prix">Sur demande</p>
-          <p>Contactez-moi pour discuter de votre projet.</p>
-        </article>
-
-        <article class="tarif-card">
+        <article class="tarif-carte">
           <h3>Coaching à distance</h3>
-          <p class="prix">129 €</p>
-          <p>Un accompagnement sur 4 semaines. Contactez-moi pour plus d'informations.</p>
+          <div class="tarif-prix">129 €</div>
+          <p>Accompagnement sur 4 semaines</p>
+          <p class="detail">Pour avancer depuis chez soi</p>
         </article>
 
       </div>
     </section>
 
-    <section id="planning">
-      <h2>Le planning des cours</h2>
+    <section class="tarifs-section prestations-autres">
+      <h2>Autres prestations</h2>
+      <p class="section-intro">
+        Des formats adaptés à tes envies, à ton lieu et à ton projet.
+        Parlons-en pour imaginer une séance qui te correspond.
+      </p>
 
-      <div class="planning">
+      <div class="prestations-liste">
+        <div class="prestation-pastille">Cours à domicile</div>
+        <div class="prestation-pastille">Cours sur podium</div>
+        <div class="prestation-pastille">Cours en extérieur</div>
+        <div class="prestation-pastille">Stages à domicile</div>
+        <div class="prestation-pastille">Coaching personnalisé</div>
+        <div class="prestation-pastille">Séances entre amis</div>
+      </div>
+    </section>
+
+    <section class="tarifs-section">
+      <h2>Un avantage pour les élèves du studio</h2>
+      <div class="tarifs-note">
         <p>
-          <strong>Le planning est disponible sur demande.</strong>
+          Les élèves de pole dance peuvent bénéficier de <strong>tarifs préférentiels
+          sur les autres disciplines</strong> proposées par Yog'n Moov :
+          yoga, Pilates et souplesse.
         </p>
-
         <p>
-          Des créneaux peuvent être proposés en journée,
-          en fin d'après-midi et en soirée, selon les disponibilités.
-        </p>
-
-        <p>
-          Chez Yog'n Moov, les cours se déroulent en
-          <strong>petits groupes</strong> afin de préserver une ambiance
-          conviviale, un accompagnement personnalisé et un cadre où chacun
-          peut évoluer à son rythme.
-        </p>
-
-        <p>
-          Contactez-moi pour connaître les prochains créneaux disponibles
-          et trouver un horaire qui vous convient.
-        </p>
-
-        <div class="planning-buttons">
-          <a class="btn btn-principal"
-             href="sms:+33632514950">
-            Me contacter par SMS
-          </a>
-
-          <a class="btn btn-secondaire"
-             href="mailto:poledancejulie@gmail.com?subject=Demande%20de%20planning%20Pole%20Dance">
-            Me contacter par e-mail
-          </a>
-        </div>
-
-        <p class="note">
-          Les places étant limitées, pensez à me contacter pour connaître
-          les disponibilités.
+          N'hésite pas à me contacter pour connaître les conditions et les tarifs adaptés.
         </p>
       </div>
+    </section>
+
+    <section class="tarifs-section">
+      <h2>Quand venir pratiquer ?</h2>
+      <p class="section-intro">
+        Des créneaux sont proposés en journée, en fin d'après-midi et en soirée,
+        selon les disponibilités.
+      </p>
+    </section>
+
+    <section class="tarifs-contact">
+      <h2>Envie de te lancer ?</h2>
+      <p>
+        Une question, une envie de découvrir la pole dance ou de réserver un cours ?
+        Contacte-moi pour que nous trouvions ensemble le créneau qui te convient.
+      </p>
+      <a class="tarifs-bouton" href="sms:+33632514950">Envoyer un SMS</a>
+      <a class="tarifs-bouton secondaire" href="mailto:poledancejulie@gmail.com">Envoyer un e-mail</a>
     </section>
 
   </main>
 
-  <footer>
+  <footer class="tarifs-footer">
     <p><strong>Yog'n Moov · Pole Dance</strong></p>
     <p>Soulières (51130), à environ 15 minutes d'Épernay</p>
-    <p>06 32 51 49 50</p>
     <p>
       Pratique sportive et de bien-être, adaptée à chacun.
       Elle ne remplace pas l'avis d'un médecin.
     </p>
-    <p>
-      <a href="https://www.yognmoov.fr" target="_blank" rel="noopener noreferrer">
-        Découvrir Yog'n Moov
-      </a>
-    </p>
+    <p><a href="https://www.yognmoov.fr">Découvrir Yog'n Moov</a></p>
   </footer>
 
 </body>
