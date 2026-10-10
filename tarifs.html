@@ -3,363 +3,197 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarifs Pole Dance | Yog'n Moov à Soulières</title>
-  <meta name="description" content="Découvrez les tarifs des cours de pole dance, cours privés, duos, parent-enfant et coachings chez Yog'n Moov à Soulières, près d'Épernay.">
-  <link rel="stylesheet" href="style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tarifs des cours de pole dance Yog'n Moov à Soulières, près d'Épernay.">
+  <title>Tarifs | Yog'n Moov Pole Dance</title>
   <style>
-    .tarifs-page {
-      --creme: #f8f3eb;
-      --framboise: #bd426c;
-      --dore: #c5a15b;
-      --noir: #171717;
-      background: var(--creme);
-      color: var(--noir);
-      padding: 35px 18px 50px;
-      min-height: 70vh;
-    }
-
-    .tarifs-page * {
-      box-sizing: border-box;
-    }
-
-    .tarifs-intro {
-      max-width: 900px;
-      margin: 0 auto 35px;
-      padding: 38px 28px;
-      background: var(--noir);
-      color: var(--creme);
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .tarifs-intro .surtitre {
-      color: var(--dore);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-
-    .tarifs-intro h1 {
-      color: var(--framboise);
-      font-size: clamp(32px, 6vw, 48px);
-      margin: 0 0 18px;
-    }
-
-    .tarifs-intro p {
-      max-width: 650px;
-      margin: 0 auto 12px;
-      line-height: 1.8;
-    }
-
-    .tarifs-section {
-      max-width: 1050px;
-      margin: 0 auto 42px;
-    }
-
-    .tarifs-section h2 {
-      text-align: center;
-      font-size: clamp(25px, 4vw, 34px);
-      margin: 0 0 10px;
-      color: var(--noir);
-    }
-
-    .tarifs-section .section-intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 25px;
-      line-height: 1.7;
-    }
-
-    .tarifs-grille {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .tarif-carte {
-      background: #fffdf9;
-      border: 1px solid #e7dccc;
-      border-radius: 15px;
-      padding: 25px 22px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
-    }
-
-    .tarif-carte h3 {
-      font-size: 19px;
-      margin: 0 0 12px;
-      color: var(--noir);
-    }
-
-    .tarif-prix {
-      color: var(--framboise);
-      font-size: 32px;
-      font-weight: 700;
-      margin: 12px 0;
-    }
-
-    .tarif-carte p {
-      line-height: 1.7;
-      margin-bottom: 0;
-    }
-
-    .tarif-carte .detail {
-      color: #6e625b;
-      font-size: 14px;
-    }
-
-    .tarif-mis-en-avant {
-      border: 2px solid var(--dore);
-    }
-
-    .prestations-autres {
-      background: #eee4d7;
-      border-radius: 18px;
-      padding: 30px 24px;
-    }
-
-    .prestations-autres h2 {
-      margin-bottom: 12px;
-    }
-
-    .prestations-liste {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .prestation-pastille {
-      background: #fffdf9;
-      border: 1px solid #d8c6a5;
-      border-radius: 30px;
-      padding: 12px 17px;
-      text-align: center;
-    }
-
-    .tarifs-note {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 25px;
-      border-left: 4px solid var(--framboise);
-      background: #fffdf9;
-      border-radius: 8px;
-      line-height: 1.8;
-    }
-
-    .tarifs-contact {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 32px 20px;
-      background: var(--noir);
-      color: var(--creme);
-      border-radius: 18px;
-    }
-
-    .tarifs-contact h2 {
-      color: var(--dore);
-      margin-top: 0;
-    }
-
-    .tarifs-contact p {
-      line-height: 1.8;
-    }
-
-    .tarifs-bouton {
-      display: inline-block;
-      margin: 8px 5px;
-      padding: 12px 20px;
-      border-radius: 30px;
-      background: var(--framboise);
-      color: white !important;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .tarifs-bouton.secondaire {
-      background: transparent;
-      border: 1px solid var(--dore);
-      color: var(--creme) !important;
-    }
-
-    .tarifs-footer {
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #655b53;
-    }
-
-    .tarifs-footer a {
-      color: var(--framboise);
-    }
-
-    @media (max-width: 600px) {
-      .tarifs-page {
-        padding: 22px 12px 35px;
-      }
-
-      .tarifs-intro {
-        padding: 28px 18px;
-      }
-
-      .tarif-carte {
-        padding: 22px 17px;
-      }
-    }
+    :root{--black:#191716;--cream:#f8f0e4;--white:#fffdfa;--berry:#80334f;--gold:#c7a35d;--text:#332d29;--line:#ded2c2;--pink:#f3e1e6}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+    .site-header{background:var(--black);color:var(--cream);border-bottom:4px solid var(--gold);padding:24px max(22px,calc((100% - 1120px)/2)) 26px}
+    .brand{display:flex;align-items:center;gap:22px;min-height:150px;margin-bottom:36px}
+    .logo{width:150px;height:150px;flex:0 0 150px;object-fit:contain;border-radius:50%;background:#fff;border:3px solid var(--gold)}
+    .brand-title{margin:0;color:#fffaf2;font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,5vw,3.25rem);font-style:italic;line-height:1.15}
+    .brand-subtitle{margin:10px 0 0;color:var(--gold);font-size:.95rem;letter-spacing:.25em}
+    .nav{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center}
+    .nav a{color:#f8f0e8;text-decoration:none;font-size:1.05rem;padding:5px 0 8px;border-bottom:4px solid transparent}
+    .nav a:hover,.nav a[aria-current=page]{color:#a64a6b;border-bottom-color:var(--berry)}
+    .container{width:min(1080px,calc(100% - 40px));margin:0 auto}
+    .hero{margin:42px auto 58px;background:var(--black);color:var(--cream);border-radius:7px;padding:clamp(30px,6vw,70px) clamp(22px,6vw,68px);text-align:center;border-bottom:5px solid var(--gold)}
+    .eyebrow{margin:0;color:var(--gold);font-size:.86rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+    h1{margin:35px auto 30px;max-width:760px;color:var(--berry);font-size:clamp(2.45rem,6vw,4rem);line-height:1.2;text-align:center}
+    .hero p:not(.eyebrow){max-width:760px;margin:14px auto 0;font-size:clamp(1.05rem,2.6vw,1.35rem);text-align:center;color:#e7dfd6}
+    .section-intro{text-align:center;margin:0 auto 30px;max-width:800px}
+    .section-intro .eyebrow{color:#9c814a}
+    .section-intro h2{margin:12px 0;color:var(--berry);font-size:clamp(2rem,4.5vw,3rem);line-height:1.2}
+    .section-intro p{font-size:1.12rem;margin:0 auto;max-width:740px}
+    .prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:58px}
+    .card{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--gold);padding:30px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:245px}
+    .card.pink{background:var(--pink);border-top-color:var(--berry)}
+    .card.gold{background:#ead6a9;border-top-color:var(--gold)}
+    .card.dark{background:var(--black);color:var(--cream);border-color:var(--black);border-top-color:var(--berry)}
+    .card h3{margin:0 0 12px;font-size:clamp(1.6rem,3.5vw,2.05rem);line-height:1.25}
+    .card p{max-width:440px;margin:0;font-size:1.08rem}
+    .price{margin-top:20px;color:var(--berry);font-size:clamp(2.2rem,5vw,2.8rem);font-weight:800;line-height:1.15}
+    .card.dark .price{color:#e2bd71}
+    .price-note{margin-top:5px;font-size:1rem}
+    .other{background:#ead6a9;border-top:6px solid var(--gold);padding:clamp(26px,5vw,46px);text-align:center;margin-bottom:30px}
+    .studio-perks{background:var(--pink);border-top:6px solid var(--berry);padding:clamp(26px,5vw,42px);text-align:center;margin:0 0 30px}
+    .studio-perks h2{margin:12px 0;color:var(--berry);font-size:clamp(1.9rem,4.5vw,2.6rem);line-height:1.2}
+    .studio-perks p{max-width:760px;margin:10px auto;font-size:1.08rem}
+    .disciplines{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:20px auto}
+    .disciplines span{display:inline-block;background:var(--white);border:1px solid rgba(51,45,41,.16);padding:9px 18px;font-weight:700}
+    .other h2,.contact h2{margin:12px 0;color:var(--berry);font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.2}
+    .other p{max-width:760px;margin:8px auto;font-size:1.08rem}
+    .service-list{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:22px auto}
+    .service-list li{background:var(--white);border:1px solid rgba(51,45,41,.18);padding:9px 15px;font-weight:700}
+    .contact{background:var(--black);color:var(--cream);border-top:6px solid var(--berry);padding:clamp(28px,5vw,48px);text-align:center;margin-bottom:42px}
+    .contact h2{color:#e2bd71}
+    .contact p{max-width:780px;margin:12px auto;font-size:1.08rem}
+    .contact .availability{color:#f0cbd7;font-weight:700}
+    .buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:26px}
+    .button{display:inline-flex;justify-content:center;align-items:center;min-height:54px;min-width:210px;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:800;border:2px solid var(--gold);transition:transform .15s ease}
+    .button:hover{transform:translateY(-2px)}
+    .button.email{background:var(--gold);color:var(--black)}
+    .button.sms{background:transparent;color:#f0cbd7;border-color:#a64a6b}
+    footer{background:var(--black);color:var(--cream);border-top:4px solid var(--gold);padding:28px 18px;text-align:center;font-size:.92rem}
+    footer p{margin:5px 0}footer a{color:#e2bd71}
+    @media(max-width:680px){.site-header{padding:20px 20px 24px}.brand{min-height:0;gap:14px;margin-bottom:35px}.logo{width:112px;height:112px;flex-basis:112px}.brand-title{font-size:clamp(1.8rem,7vw,2.5rem)}.brand-subtitle{font-size:.8rem;letter-spacing:.2em}.nav{gap:10px 19px}.nav a{font-size:1rem}.container{width:calc(100% - 24px)}.hero{margin:20px auto 42px;padding:34px 22px}.hero h1{margin:28px auto 25px}.prices{grid-template-columns:1fr;gap:16px;margin-bottom:42px}.card{min-height:0;padding:27px 22px}.card p{max-width:500px}.button{width:100%}}
   </style>
 </head>
-
 <body>
-
-  <!-- En-tête du site : reprend celui défini dans style.css -->
-  <header>
-    <div class="logo">
-      <a href="index.html">Yog'n Moov</a>
-      <span>POLE DANCE</span>
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="logo-yognmoov.png" alt="Logo Yog'n Moov">
+      <div>
+        <p class="brand-title">Yog'n Moov</p>
+        <p class="brand-subtitle">POLE DANCE</p>
+      </div>
     </div>
-
-    <nav>
+    <nav class="nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
-      <a href="cours.html">Les cours</a>
+      <a href="pole.html">La pole</a>
+      <a href="cours.html">Cours</a>
       <a href="coaching.html">Coaching</a>
-      <a href="tarifs.html" class="active">Tarifs</a>
+      <a href="tarifs.html" aria-current="page">Tarifs</a>
+      <a href="avis.html">Avis</a>
+      <a href="julie.html">Julie</a>
+      <a href="studio.html">Studio</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="tarifs-page">
-
-    <section class="tarifs-intro">
-      <div class="surtitre">Yog'n Moov · Soulières</div>
-      <h1>Les tarifs</h1>
-      <p>
-        La pole dance, à ton rythme, dans une ambiance conviviale et bienveillante.
-      </p>
-      <p>
-        Ici, pas de compétition ni de pression : chacun avance à son rythme,
-        dans un petit groupe où l'on prend le temps d'apprendre et de se faire plaisir.
-      </p>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Tarifs et prestations</p>
+      <h1>Des tarifs pour chaque envie</h1>
+      <p>Découvrir, pratiquer régulièrement, venir avec une amie ou travailler un objectif : choisissez la formule qui vous correspond.</p>
+      <p>Des cours à taille humaine, dans un cadre bienveillant, pour apprendre, progresser et prendre plaisir à bouger.</p>
     </section>
 
-    <section class="tarifs-section">
-      <h2>Les cours au studio</h2>
-      <p class="section-intro">
-        Des cours en petit comité, avec un maximum de 4 à 5 personnes,
-        pour un accompagnement attentif et personnalisé.
-      </p>
+    <section aria-labelledby="tarifs-title">
+      <div class="section-intro">
+        <p class="eyebrow">Choisissez votre formule</p>
+        <h2 id="tarifs-title">La pole dance à votre rythme</h2>
+        <p>Plusieurs formats sont possibles, pour découvrir la discipline, progresser ou partager un moment à deux.</p>
+      </div>
 
-      <div class="tarifs-grille">
-
-        <article class="tarif-carte">
-          <h3>Cours collectif</h3>
-          <div class="tarif-prix">22 €</div>
-          <p>La séance</p>
-          <p class="detail">Petit groupe de 4 à 5 personnes</p>
+      <div class="prices">
+        <article class="card">
+          <div>
+            <h3>Cours collectifs</h3>
+            <p>4 à 5 personnes maximum, pour apprendre progressivement et partager la bonne humeur du groupe.</p>
+          </div>
+          <div><div class="price">22 €</div><div class="price-note">la séance</div></div>
         </article>
 
-        <article class="tarif-carte tarif-mis-en-avant">
-          <h3>Carte 10 cours</h3>
-          <div class="tarif-prix">200 €</div>
-          <p>Pour pratiquer régulièrement</p>
-          <p class="detail">Soit un cours offert</p>
+        <article class="card pink">
+          <div>
+            <h3>Carte 10 cours</h3>
+            <p>Pour pratiquer régulièrement et avancer à votre rythme.</p>
+          </div>
+          <div><div class="price">200 €</div><div class="price-note">soit un cours offert</div></div>
         </article>
 
-        <article class="tarif-carte">
-          <h3>Cours privé</h3>
-          <div class="tarif-prix">70 €</div>
-          <p>Un accompagnement individuel</p>
-          <p class="detail">Pour progresser selon tes envies</p>
+        <article class="card gold">
+          <div>
+            <h3>Cours privés</h3>
+            <p>Un cours rien que pour vous, adapté à vos envies et à votre objectif.</p>
+          </div>
+          <div><div class="price">70 €</div><div class="price-note">la séance</div></div>
         </article>
 
-        <article class="tarif-carte">
-          <h3>Cours duo</h3>
-          <div class="tarif-prix">40 €</div>
-          <p>Par personne</p>
-          <p class="detail">À partager à deux</p>
+        <article class="card dark">
+          <div>
+            <h3>Cours duo</h3>
+            <p>Venez à deux, entre amis, en couple ou avec la personne de votre choix.</p>
+          </div>
+          <div><div class="price">40 €</div><div class="price-note">par personne</div></div>
         </article>
 
-        <article class="tarif-carte">
-          <h3>Atelier parent-enfant</h3>
-          <div class="tarif-prix">60 €</div>
-          <p>Pour le duo</p>
-          <p class="detail">Séance d'une heure · sur disponibilité</p>
+        <article class="card pink">
+          <div>
+            <h3>Atelier parent-enfant</h3>
+            <p>Un moment complice pour découvrir la pole dance ensemble.</p>
+          </div>
+          <div><div class="price">60 €</div><div class="price-note">le duo · 1 heure</div></div>
         </article>
 
-        <article class="tarif-carte">
-          <h3>Coaching à distance</h3>
-          <div class="tarif-prix">129 €</div>
-          <p>Accompagnement sur 4 semaines</p>
-          <p class="detail">Pour avancer depuis chez soi</p>
+        <article class="card">
+          <div>
+            <h3>Coaching à distance</h3>
+            <p>Un accompagnement en visio pour pratiquer depuis chez vous.</p>
+          </div>
+          <div><div class="price">129 €</div><div class="price-note">pour 4 semaines</div></div>
         </article>
-
       </div>
     </section>
 
-    <section class="tarifs-section prestations-autres">
+    <section class="other">
+      <p class="eyebrow">Des formats sur mesure</p>
       <h2>Autres prestations</h2>
-      <p class="section-intro">
-        Des formats adaptés à tes envies, à ton lieu et à ton projet.
-        Parlons-en pour imaginer une séance qui te correspond.
-      </p>
+      <p>Vous avez un projet particulier ou un événement à organiser ?</p>
+      <ul class="service-list">
+        <li>Cours à domicile</li>
+        <li>Cours sur podium</li>
+        <li>Cours en extérieur</li>
+        <li>Stages</li>
+      </ul>
+      <p><strong>Tarifs sur demande.</strong> Contactez-moi pour discuter de votre projet et obtenir les informations tarifaires.</p>
+    </section>
 
-      <div class="prestations-liste">
-        <div class="prestation-pastille">Cours à domicile</div>
-        <div class="prestation-pastille">Cours sur podium</div>
-        <div class="prestation-pastille">Cours en extérieur</div>
-        <div class="prestation-pastille">Stages à domicile</div>
-        <div class="prestation-pastille">Coaching personnalisé</div>
-        <div class="prestation-pastille">Séances entre amis</div>
+    <section class="studio-perks">
+      <p class="eyebrow">Les avantages du studio</p>
+      <h2>Des tarifs préférentiels sur les autres disciplines</h2>
+      <p>En pratiquant la pole dance chez <strong>Yog'n Moov</strong>, vous pouvez également bénéficier de tarifs préférentiels sur les autres activités du studio.</p>
+      <div class="disciplines" aria-label="Autres disciplines du studio">
+        <span>Yoga</span>
+        <span>Pilates</span>
+        <span>Souplesse</span>
+      </div>
+      <p><strong>Envie d’en profiter ?</strong> Contactez-moi pour connaître les conditions et les tarifs réservés aux élèves du studio.</p>
+    </section>
+
+    <section class="contact">
+      <p class="eyebrow">Planning et réservations</p>
+      <h2>On trouve un créneau ?</h2>
+      <p class="availability">Des créneaux sont proposés en journée, en fin d’après-midi et en soirée, selon les disponibilités.</p>
+      <p>Les places sont limitées pour conserver des cours à taille humaine. Écrivez-moi pour connaître les prochaines disponibilités ou parler de votre projet.</p>
+      <div class="buttons">
+        <a class="button email" href="mailto:poledancejulie@gmail.com?subject=Renseignements%20Yog%27n%20Moov&amp;body=Bonjour%2C%0AJe%20souhaite%20avoir%20des%20renseignements%20sur%20les%20cours%20et%20les%20disponibilit%C3%A9s.%0A%0AMerci%20!">✉ Écrire un e-mail</a>
+        <a class="button sms" href="sms:+33632514950?body=Bonjour%2C%20je%20souhaite%20avoir%20des%20renseignements%20sur%20les%20cours%20Yog%27n%20Moov%20et%20les%20disponibilit%C3%A9s.%20Merci%20!">✉ Envoyer un SMS</a>
       </div>
     </section>
-
-    <section class="tarifs-section">
-      <h2>Un avantage pour les élèves du studio</h2>
-      <div class="tarifs-note">
-        <p>
-          Les élèves de pole dance peuvent bénéficier de <strong>tarifs préférentiels
-          sur les autres disciplines</strong> proposées par Yog'n Moov :
-          yoga, Pilates et souplesse.
-        </p>
-        <p>
-          N'hésite pas à me contacter pour connaître les conditions et les tarifs adaptés.
-        </p>
-      </div>
-    </section>
-
-    <section class="tarifs-section">
-      <h2>Quand venir pratiquer ?</h2>
-      <p class="section-intro">
-        Des créneaux sont proposés en journée, en fin d'après-midi et en soirée,
-        selon les disponibilités.
-      </p>
-    </section>
-
-    <section class="tarifs-contact">
-      <h2>Envie de te lancer ?</h2>
-      <p>
-        Une question, une envie de découvrir la pole dance ou de réserver un cours ?
-        Contacte-moi pour que nous trouvions ensemble le créneau qui te convient.
-      </p>
-      <a class="tarifs-bouton" href="sms:+33632514950">Envoyer un SMS</a>
-      <a class="tarifs-bouton secondaire" href="mailto:poledancejulie@gmail.com">Envoyer un e-mail</a>
-    </section>
-
   </main>
 
-  <footer class="tarifs-footer">
+  <footer>
     <p><strong>Yog'n Moov · Pole Dance</strong></p>
     <p>Soulières (51130), à environ 15 minutes d'Épernay</p>
-    <p>
-      Pratique sportive et de bien-être, adaptée à chacun.
-      Elle ne remplace pas l'avis d'un médecin.
-    </p>
-    <p><a href="https://www.yognmoov.fr">Découvrir Yog'n Moov</a></p>
+    <p>06 32 51 49 50 · <a href="https://www.yognmoov.fr" target="_blank" rel="noopener noreferrer">www.yognmoov.fr</a></p>
+    <p>Pratique sportive et de bien-être, adaptée à chacun. Elle ne remplace pas l'avis d'un médecin.</p>
   </footer>
-
 </body>
 </html>
+
