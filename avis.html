@@ -1,18 +1,484 @@
+
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Avis des élèves | Yog'n Moov Pole Dance</title><meta name="description" content="Avis d'élèves sur les cours de pole dance de Julie à Soulières : petits groupes, bienveillance et progression.">
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="index.html">Yog'n Moov <span>Pole Dance</span></a><nav><a href="index.html">Accueil</a><a href="pole.html">La pole</a><a href="cours.html">Cours</a><a href="coaching.html">Coaching</a><a href="tarifs.html">Tarifs</a><a href="avis.html" aria-current="page">Avis</a><a href="julie.html">Julie</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></nav></header>
-<main>
-<section><h1>Elles ont osé essayer</h1><p class="lead">Chaque élève arrive avec son niveau, ses objectifs et parfois quelques appréhensions. Voici ce qu'elles en disent, en avis Google.</p></section>
-<section>
-<blockquote class="quote"><p class="stars" aria-label="5 étoiles sur 5">★★★★★</p><p>« Julie est top ! Vu mon manque de confiance elle a su me rassurer et m'amener vers la réussite de figure de pôle danse en petit groupe ! Je recommande… »</p><cite>Noemie, avis Google</cite></blockquote>
-<blockquote class="quote"><p class="stars" aria-label="5 étoiles sur 5">★★★★★</p><p>« Les cours avec Julie sont top. Toujours dans la bienveillance et dans la bonne humeur. »</p><cite>Chloé, avis Google</cite></blockquote>
-<blockquote class="quote"><p class="stars" aria-label="5 étoiles sur 5">★★★★★</p><p>« Des cours en petit groupe dans une ambiance conviviale, Julie est présente pour nous faire progresser »</p><cite>Sabrina, avis Google</cite></blockquote>
-<blockquote class="quote"><p class="stars" aria-label="5 étoiles sur 5">★★★★★</p><p>« Bientôt 1 an de cours de pole dance avec Julie et toujours un plaisir ! Très pédagogue, agréable et bienveillante, elle nous fait progresser dans une … »</p><cite>Alicia, avis Google</cite></blockquote></section>
-<section class="soft"><h2>Vous hésitez encore ?</h2><p>Vous n'avez pas besoin de vous engager tout de suite. Vous pouvez commencer par une séance découverte ou m'écrire pour en discuter.</p>
-<p><a class="btn" href="contact.html">Je veux essayer</a></p></section></main>
-<footer><p>Yog'n Moov · Pole Dance · Soulières (51130), à 15 min d'Épernay · 06 32 51 49 50</p>
-<p>Pratique sportive et de bien-être, adaptée à chacun. Elle ne remplace pas l'avis d'un médecin.</p>
-<p><a href="https://www.yognmoov.fr">Yog'n Moov : yoga, Pilates, méditation</a></p></footer></body></html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Découvrez l'esprit des cours de pole dance Yog'n Moov à Soulières, près d'Épernay, et partagez votre expérience.">
+  <title>Avis et témoignages | Yog'n Moov Pole Dance</title>
+
+  <style>
+    :root {
+      --black: #191716;
+      --cream: #f8f0e4;
+      --white: #fffdfa;
+      --berry: #80334f;
+      --gold: #c7a35d;
+      --text: #332d29;
+      --line: #ded2c2;
+      --pink: #f3e1e6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: var(--black);
+      color: var(--cream);
+      border-bottom: 4px solid var(--gold);
+      padding: 24px max(22px, calc((100% - 1120px) / 2)) 26px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 150px;
+      margin-bottom: 36px;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      flex: 0 0 150px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--gold);
+    }
+
+    .brand-title {
+      margin: 0;
+      color: #fffaf2;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-style: italic;
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      margin: 10px 0 0;
+      color: var(--gold);
+      font-size: .95rem;
+      letter-spacing: .25em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #f8f0e8;
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 5px 0 8px;
+      border-bottom: 4px solid transparent;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      color: #a64a6b;
+      border-bottom-color: var(--berry);
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      margin: 42px auto 58px;
+      background: var(--black);
+      color: var(--cream);
+      border-radius: 7px;
+      padding: clamp(30px, 6vw, 70px) clamp(22px, 6vw, 68px);
+      text-align: center;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold);
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .hero h1 {
+      margin: 24px auto;
+      color: #e2bd71;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.2;
+    }
+
+    .hero p:not(.eyebrow) {
+      max-width: 760px;
+      margin: 14px auto 0;
+      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+      color: #e7dfd6;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 35px;
+    }
+
+    .intro .eyebrow {
+      color: #9c814a;
+    }
+
+    .intro h2 {
+      margin: 12px 0;
+      color: var(--berry);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-bottom: 58px;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--gold);
+      padding: 30px 26px;
+      text-align: center;
+    }
+
+    .value-card:nth-child(2),
+    .value-card:nth-child(3) {
+      background: var(--pink);
+      border-top-color: var(--berry);
+    }
+
+    .value-card .symbol {
+      font-size: 2rem;
+      color: var(--berry);
+      line-height: 1.3;
+    }
+
+    .value-card h3 {
+      margin: 12px 0;
+      color: var(--berry);
+      font-size: 1.65rem;
+      line-height: 1.3;
+    }
+
+    .value-card p {
+      margin: 0;
+      font-size: 1.04rem;
+    }
+
+    .testimonials {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--berry);
+      padding: clamp(26px, 5vw, 46px);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      color: var(--berry);
+      font-size: clamp(2rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      margin: 12px 0 18px;
+    }
+
+    .testimonials p {
+      max-width: 760px;
+      margin: 12px auto;
+      font-size: 1.08rem;
+    }
+
+    .quote-mark {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .review-cta {
+      background: var(--pink);
+      border-top: 6px solid var(--gold);
+      padding: clamp(28px, 5vw, 48px);
+      margin: 30px 0 42px;
+      text-align: center;
+    }
+
+    .review-cta h2 {
+      color: var(--berry);
+      font-size: clamp(2rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    .review-cta p {
+      max-width: 760px;
+      margin: 12px auto;
+      font-size: 1.08rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 54px;
+      min-width: 210px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid var(--gold);
+      transition: transform .15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.email {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .button.sms {
+      background: var(--black);
+      color: var(--cream);
+      border-color: var(--black);
+    }
+
+    .closing {
+      text-align: center;
+      padding: 5px 10px 48px;
+    }
+
+    .closing p {
+      color: var(--berry);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-style: italic;
+      margin: 0;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--cream);
+      border-top: 4px solid var(--gold);
+      padding: 28px 18px;
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer a {
+      color: #e2bd71;
+    }
+
+    @media (max-width: 680px) {
+      .site-header {
+        padding: 20px 20px 24px;
+      }
+
+      .brand {
+        min-height: 0;
+        gap: 14px;
+        margin-bottom: 35px;
+      }
+
+      .logo {
+        width: 112px;
+        height: 112px;
+        flex-basis: 112px;
+      }
+
+      .brand-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+      }
+
+      .brand-subtitle {
+        font-size: .8rem;
+        letter-spacing: .2em;
+      }
+
+      .nav {
+        gap: 10px 19px;
+      }
+
+      .nav a {
+        font-size: 1rem;
+      }
+
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .hero {
+        margin: 20px auto 42px;
+        padding: 34px 22px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 42px;
+      }
+
+      .value-card {
+        padding: 26px 22px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="logo-yognmoov.png" alt="Logo Yog'n Moov">
+      <div>
+        <p class="brand-title">Yog'n Moov</p>
+        <p class="brand-subtitle">POLE DANCE</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="pole.html">La pole</a>
+      <a href="cours.html">Cours</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="avis.html" aria-current="page">Avis</a>
+      <a href="julie.html">Julie</a>
+      <a href="studio.html">Studio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">L'esprit Yog'n Moov</p>
+      <h1>Votre expérience compte</h1>
+      <p>La pole dance, c'est bien plus que des figures autour d'une barre. C'est aussi découvrir ses capacités, prendre confiance et partager de bons moments.</p>
+      <p>Chaque personne arrive avec son histoire, ses envies et son propre rythme. Et c'est très bien comme ça !</p>
+    </section>
+
+    <section>
+      <div class="intro">
+        <p class="eyebrow">Bien plus qu'un cours</p>
+        <h2>Ce qui compte ici</h2>
+        <p>Un petit studio, des groupes à taille humaine et une pratique sans pression : l'objectif est de progresser tout en prenant plaisir à venir.</p>
+      </div>
+
+      <div class="values">
+        <article class="value-card">
+          <div class="symbol" aria-hidden="true">♡</div>
+          <h3>Une ambiance bienveillante</h3>
+          <p>Pas de jugement, pas de compétition entre élèves. Chacune avance à son rythme, dans une atmosphère conviviale.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="symbol" aria-hidden="true">✦</div>
+          <h3>La confiance en soi</h3>
+          <p>Découvrir ce dont son corps est capable, oser essayer et être fière de ses propres progrès.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="symbol" aria-hidden="true">∞</div>
+          <h3>Une progression personnelle</h3>
+          <p>Pas besoin d'être déjà sportive, souple ou forte. On apprend progressivement et on célèbre chaque étape.</p>
+        </article>
+
+        <article class="value-card">
+          <div class="symbol" aria-hidden="true">☺</div>
+          <h3>Du sérieux, sans se prendre au sérieux</h3>
+          <p>Un accompagnement attentif, de la bonne humeur et le droit de rire, de recommencer et de se tromper.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="quote-mark" aria-hidden="true">“</div>
+      <p class="eyebrow">Vos mots, votre vécu</p>
+      <h2>Les témoignages des élèves</h2>
+      <p>Chaque parcours est différent. Si vous participez aux cours Yog'n Moov, votre retour peut aider d'autres personnes à oser franchir le pas.</p>
+      <p>Vous pouvez partager ce que vous appréciez dans les cours, l'ambiance du studio, vos progrès ou simplement ce que cette activité vous apporte.</p>
+    </section>
+
+    <section class="review-cta">
+      <p class="eyebrow">Vous avez participé à un cours ?</p>
+      <h2>Racontez votre expérience</h2>
+      <p>Un petit message, quelques lignes ou un retour sur votre première séance : chaque avis est précieux et permet de faire connaître le studio.</p>
+      <p>Envoyez-moi votre témoignage par e-mail ou par SMS. Avec votre accord, il pourra être publié sur cette page.</p>
+
+      <div class="buttons">
+        <a class="button email"
+           href="mailto:poledancejulie@gmail.com?subject=Mon%20avis%20sur%20Yog%27n%20Moov&amp;body=Bonjour%2C%0A%0AVoici%20mon%20avis%20sur%20mon%20exp%C3%A9rience%20chez%20Yog%27n%20Moov%20%3A%0A%0A%0AJe%20vous%20autorise%20%2F%20je%20ne%20vous%20autorise%20pas%20%C3%A0%20publier%20ce%20t%C3%A9moignage.%0A%0AMerci%20!">
+          ✉ Envoyer mon avis
+        </a>
+
+        <a class="button sms"
+           href="sms:+33632514950?body=Bonjour%2C%20je%20souhaite%20partager%20mon%20avis%20sur%20les%20cours%20Yog%27n%20Moov.%20">
+          ✉ Envoyer un SMS
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p>Chaque progrès compte. Chaque personne aussi.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Yog'n Moov · Pole Dance</strong></p>
+    <p>Soulières (51130), à environ 15 minutes d'Épernay</p>
+    <p>06 32 51 49 50 · <a href="https://www.yognmoov.fr" target="_blank" rel="noopener noreferrer">www.yognmoov.fr</a></p>
+    <p>Pratique sportive et de bien-être, adaptée à chacun. Elle ne remplace pas l'avis d'un médecin.</p>
+  </footer>
+</body>
+</html>
